@@ -1,0 +1,19 @@
+algorithm: dqn
+environment: CartPole-v1
+total_steps: 50000
+evaluation_interval: 5000
+evaluation_episodes: 10
+device: auto
+dqn:
+  learning_rate: 0.001
+  gamma: 0.99
+  batch_size: 64
+  capacity: 100000
+  learning_starts: 1000
+  epsilon_start: 1.0
+  epsilon_end: 0.05
+  epsilon_decay_steps: 20000
+  target_update_frequency: 500
+  hidden_sizes: [128, 128]
+  double_dqn: false
+  target_tau: 1.0

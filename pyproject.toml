@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reproducible-deep-rl"
+version = "0.1.0"
+description = "Readable, reproducible DQN and PPO implementations in PyTorch."
+requires-python = ">=3.11"
+dependencies = ["torch>=2.2", "numpy>=1.26", "gymnasium[classic-control]>=1.0", "matplotlib>=3.8", "pandas>=2.2", "PyYAML>=6.0", "imageio[ffmpeg]>=2.34"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+benchmark = ["cleanrl>=0.4.8"]
+mujoco = ["gymnasium[mujoco]>=1.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
